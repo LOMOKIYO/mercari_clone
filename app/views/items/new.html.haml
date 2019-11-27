@@ -9,10 +9,16 @@
         %label.label 出品画像
         %span.required 必須
         .text 最大10枚までアップロードできます
-        .a-container__main__picuturebox__drop
-        = f.fields_for :photos do |i|
-          = i.file_field :image, class:".a-container__main__picturebox__drop__input"
-        .preview
+        .a-container__main__picturebox__drop
+          = f.fields_for :photos do |i|
+            = i.file_field :image, class:"a-container__main__picturebox__drop__input"
+        -# .preview
+        %script{:src => "jquery.js"}
+        %script{:src => "dropzone.js"}
+        %form#my-awesome-dropzone.dropzone
+          %input#my-awesome-dropzone{:multiple => "multiple", :name => "file", :type => "file"}/
+        .drag-and-drop-area
+
         
       .a-container__main__name
         %label.label 商品名

@@ -30,6 +30,14 @@ Things you may want to cover:
 |nickname|string|null: false|
 |email|string|unique: true|
 |password|string|unique: true|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|year_birth_at|integer|null: false|
+|month_birth_at|integer|null: false|
+|day_birth_at|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :buyed_items,foreign_key:"buyer_id", class_name: "Item"
@@ -49,23 +57,17 @@ Things you may want to cover:
 |house_number|string|null: false|
 |building_name|string|
 |user_id|integer|null: false, foreign_key: true|
+|phone_number|string|
 
 ### Association
 - belongs_to :user
 
-## profilesテーブル
-
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|first_name|string|null: false|
-|last_name|string|null: false|
-|first_name_kana|string|null: false|
-|last_name_kana|string|null: false|
-|phone_number|string|
-|year_birth_at|integer|null: false|
-|month_birth_at|integer|null: false|
-|day_birth_at|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer| null: false|
+|customer_id|integer| null: false|
+|card_id|integer| null: false|
 
 ### Association
 - belongs_to :user

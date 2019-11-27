@@ -23,8 +23,8 @@ $(function(){
     })(file);
     reader.readAsDataURL(file);
   });
-
 });
+
 
 $(function(){
   $(document).on('input', function(){

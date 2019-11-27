@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :buy, :pay, :detail, :destroy]
   before_action :set_item_find, only:[:destroy]
-  before_action :set_selling, only: [:index, :show, :update]
+  before_action :set_selling, only: [:index, :show]
   before_action :set_item, only: [:show, :buy, :pay, :edit, :update]
   before_action :set_card, only: [:buy, :pay]
   before_action :redirect_back, only: :edit
@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
 
   def new
     @items = Item.new
-    10.times { @items.photos.build }
+    1.times { @items.photos.build }
   end
 
 

@@ -24,9 +24,8 @@
             %li.buy-container__item__inner__form__price__box
               .buy-container__item__inner__form__price__box__left 支払い金額
               .buy-container__item__inner__form__price__box__right
-                %span{"data-buy-pay" => "850"} 
-                  ¥
-                  = @item.price
+                ¥
+                = @item.price
             .buy-container__item__inner__form__price__submit
               = form_tag(action: :pay, method: :post) do
                 %button.buy-btntext 購入する 
